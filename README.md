@@ -22,3 +22,113 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+|column|type|options|
+|------|----|------|
+|user_address|string|null: false, unique: true|
+|name|string|null: false, unique: ture, add_index :users, :name|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :followers
+- has_many :tweets
+- has_many :favorites
+
+
+## followesテーブル
+
+|column|type|options|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|follower_id|integer|null: false|
+
+### Association
+- belongs_to :user
+
+
+## tweetsテーブル
+
+|column|type|options|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|content|string|----------|
+
+### Association
+- belongs_to :user
+- has_many :tags, through: tweet_tag
+- has_many :favorites
+- has_many :images
+- has_many :replies
+- has_many :retweets
+- has_many :
+
+
+## tagsテーブル
+
+|column|type|options|
+|------|----|------|
+|content|string|null: false, unique: true|
+
+
+### Association
+- has_many :tweets, through: tweet_tag
+
+
+## tweet_tagテーブル
+
+|column|type|options|
+|------|----|------|
+|tweet_id|string|null: false, foreign_key: true|
+|tag_id|string|null: false, foreign_key: true|
+
+### Association
+- belongs_to :tweet
+- belongs_to :tag
+
+
+## favoritesテーブル
+
+|column|type|options|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :tweet
+
+
+## imagesテーブル
+
+|column|type|options|
+|------|----|------|
+|tweet_id|integer|null: false, foreign_key: true|
+|image|string|null: false|
+
+### Association
+- belongs_to :tweet
+
+
+## repliesテーブル
+
+|column|type|options|
+|------|----|------|
+|tweet_id|integer|null: false, foreign_key: true|
+|replyed_tweet_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :tweet
+
+
+## retweetsテーブル
+
+|column|type|options|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :tweet
+
