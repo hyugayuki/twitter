@@ -62,7 +62,6 @@ Things you may want to cover:
 - has_many :images
 - has_many :replies
 - has_many :retweets
-- has_many :
 
 
 ## tagsテーブル
