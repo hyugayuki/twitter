@@ -1,0 +1,81 @@
+.header {
+  color: $header-font;
+  font-size: 14px;
+  height: $header-height;
+  padding: 0 120px;
+  line-height: $header-height;
+  border-bottom: solid 1px $header-border;
+  .left-menus{
+    float: left;
+    height: $header-height;
+  }
+  .left-menus li{
+    line-height: $header-height;
+    height: $header-height;
+    float: left;
+    a {
+      color: $header-font;
+      font-weight: 600;
+      line-height: $header-height;
+      padding: 0 10px;
+    }
+    a:hover {
+      color: $blue;
+      border-bottom: solid 2px $blue;
+    }
+  }
+  .right-menus{
+    height: $header-height;
+    float: right;
+    li{
+      height: $header-height;
+      float: right;
+      margin-left: 10px;
+    }
+    a{
+      display: block;
+      color: white;
+      background-color: $blue;
+      line-height: 30px;
+      height: 30px;
+      margin: 8px 0;
+      padding: 0 15px;
+      border-radius: 15px;
+    }
+    a:hover {
+      background-color: $hovered-color;
+      cursor: pointer;
+    }
+    .search-query {
+      position: relative;
+      input {
+        font-size: 12px;
+        margin: 8px 0;
+        padding: 0 15px;
+        display: block;
+        width: 200px;
+        line-height: 30px;
+        height: 30px;
+        border-radius: 15px;
+        outline: 0;
+        background-color: #EEFFFF;
+      }
+      button {
+        border: 0;
+        background-color: #EEFFFF;
+        position: absolute;
+        right: 7px;
+        top: 14px;
+      }
+    }
+  }
+  .reload-icon {
+    height: $header-height;
+    width: $header-height;
+    margin: 0 auto;
+    a {
+      color: $blue;
+      line-height: $header-height;
+    }
+  }
+}
