@@ -1,0 +1,13 @@
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+$header-height: 45px;
+$header-border: #CCCCCC;
+$header-font: #666666;
+$blue: #66ccff;
+$hovered-color: #6699ff;
