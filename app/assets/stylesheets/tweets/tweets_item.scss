@@ -1,0 +1,64 @@
+.tweets-wrapper {
+    width: 580px;
+    @include clearfix();
+    li {
+      width: 550px;
+      padding: 15px;
+      background-color: white;
+      border-bottom: solid 1px $header-border;
+      @include clearfix();
+      .user-account-info {
+        float: left;
+        margin: 5px 10px 0 0;
+        .icon-image {
+          height: 40px;
+          width: 40px;
+          border-radius: 20px;
+          background-color: $blue;
+        }
+      }
+      .tweet-content {
+        float: left;
+        width: 500px;
+        min-height: 100px;
+        // background-color: yellow;
+        .tweet-header {
+          position: relative;
+          height: 20px;
+          background-color: white;
+          .tweet-header_user-name {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .tweet-header_user-id {
+            color: $header-font;
+            font-size: 12px;
+          }
+          .tweetTime {
+            color: $header-font;
+            font-size: 12px;
+          }
+          em {
+            position: absolute;
+            right: 10px;
+          }
+        }
+        .tweet-text {
+          height: 80px;
+          background-color: whitesmoke;
+        }
+        .tweet-footer {
+          height: 20px;
+          margin-top: 5px;
+          background-color: white;
+          span {
+            float: left;
+            color: $header-font;
+            font-weight: 200;
+            padding: 0 5px;
+            margin-right: 50px;
+          }
+        }
+      }
+    }
+}

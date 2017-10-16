@@ -1,0 +1,42 @@
+.post_area {
+  height: 60px;
+  margin: 0 auto;
+  // padding: 10px 5px 10px 5px;
+  background-color: #CCFFFF;
+  border-bottom: solid 1px $header-border;
+  ul {
+        position: relative;
+    padding: 10px 15px 15px 25px;
+    li {
+      float: left;
+      height: 30px;
+      line-height: 30px;
+      .user-icon{
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        background-color: white;
+        margin: 5px 10px 0 0;
+        }
+      input {
+        height: 25px;
+        padding: 5px;
+        width: 485px;
+        outline: none;
+        border: solid 1px $blue;
+        border-radius: 10px;
+        color: blue;
+        font-size: 12px;
+      }
+      span {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: $blue;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
