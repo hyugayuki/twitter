@@ -1,0 +1,73 @@
+.account-info {
+  height: 220px;
+  background-color: white;
+  position: relative;
+  .header-image {
+    height: 100px;
+    background-color: aqua;
+  }
+  .account-idenfication {
+    height: 60px;
+    background-color: white;
+    .account-icon {
+      float: left;
+      width: 68px;
+      height: 68px;
+      border: 2px solid white;
+      border-radius: 35px;
+      background-color: deepskyblue;
+      position: absolute;
+      top: 70px;
+      left: 10px;
+    }
+    .account-name-id {
+      float: left;
+      width: 130px;
+      padding-top: 5px;
+      margin-left: 90px;
+      h2 {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      h3 {
+        color: #666666;
+        font-size: 13px;
+      }
+    }
+  }
+  .account-incidental {
+    height: 60px;
+    background-color: snow;
+    .incidential-list {
+      height: 37px;
+      padding: 0 15px 10px;
+      .tweets {
+        width: 100px;
+      }
+      .follow_user {
+        width: 75px;
+      }
+      .followed_user {
+        width: 75px;
+      }
+      li {
+        float: left;
+        // width: 70px;
+        span {
+          display: block;
+        }
+        .statusLabel {
+          font-weight: 600;
+          font-size: 12px;
+          color: gray;
+        }
+        .statusValue {
+          line-height: 20px;
+          font-size: 16px;
+          font-weight: bold;
+          color: dodgerblue;
+        }
+      }
+    }
+  }
+}

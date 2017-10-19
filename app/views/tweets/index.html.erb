@@ -1,15 +1,40 @@
-<%= render partial: "tweets/header" %>
-<div class="post-modal-wrapper" id="post-modal">
-  <%= render partial: "tweets/post_modal" %>
-</div>
-<div class="message-modal-wrapper" id="message-modal">
-  <%= render partial: "tweets/message_modal" %>
-</div>
-
+<%= render partial: "header/header" %>
 <div class="content">
   <div class="hole-content">
     <div class="left-content">
-      <div class="">
+      <div class="account-info">
+        <%= render partial: "tweets/layouts/account_info" %>
+      </div>
+      <div class="recommended-trend">
+        <%= render partial: "tweets/layouts/recommended-trend" %>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="tweet-wrapper">
+        <%= render partial: "tweets/layouts/post_area" %>
+      </div>
+      <div class="notificaiton-wrapper">
+      </div>
+      <div class="tweets-wrapper">
+        <ol>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+          <%= render partial: "tweets/layouts/tweets_item" %>
+        </ol>
+      </div>
+    </div>
+    <div class="right-content">
+      <div class="recommended-users">
+      </div>
+      <div class="advertisements">
       </div>
     </div>
   </div>

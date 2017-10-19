@@ -1,0 +1,83 @@
+.post_area {
+  height: auto;
+  padding-bottom: 10px;
+  // padding: 10px 5px 10px 5px;
+  background-color: #CCFFFF;
+  border-bottom: solid 1px $header-border;
+  @include clearfix();
+  ul {
+    position: relative;
+    height: auto;
+    padding: 10px 15px 15px 25px;
+    #post-textarea {
+      .main_textarea_area {
+        textarea {
+          height: 70px;
+          padding: 10px;
+          width: 475px;
+          outline: none;
+          border: solid 2px $blue;
+          border-radius: 10px;
+          color: blue;
+          font-size: 14px;
+          display: block;
+        }
+        #post-textarea-footer {
+          height: 30px;
+          width: 490px;
+          margin: 10px 0;
+          i {
+            color: $blue;
+            font-size: 22px;
+            line-height: 30px;
+            width: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+          .post-submit-btn {
+            float: right;
+            color: white;
+            background-color: $blue;
+            border: solid 1px $hovered-color;
+            border-radius: 15px;
+            outline: none;
+            height: 30px;
+            width: 80px;
+          }
+        }
+      }
+    }
+    li {
+      float: left;
+      height: auto;
+      line-height: 30px;
+      .user-icon{
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        background-color: white;
+        margin: 5px 10px 0 0;
+      }
+      input {
+        height: 25px;
+        padding: 5px;
+        width: 485px;
+        outline: none;
+        border: solid 1px $blue;
+        border-radius: 10px;
+        color: blue;
+        font-size: 12px;
+      }
+      span {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: $blue;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+
+    }
+  }
+}
