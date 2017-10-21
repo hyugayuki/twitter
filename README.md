@@ -27,8 +27,8 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|------|
-|user_address|string|null: false, unique: true|
-|name|string|null: false, unique: ture, add_index :users, :name|
+|name|string|null: false, add_index :users, :name|
+|user_idenitfier|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 
 ### Association
