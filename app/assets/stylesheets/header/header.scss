@@ -4,7 +4,7 @@
   height: $header-height;
   padding: 0 120px;
   line-height: $header-height;
-  border-bottom: solid 1px $header-border;
+  border-bottom: solid 2px $header-border;
   .left-menus{
     float: left;
     height: $header-height;
@@ -16,7 +16,7 @@
     a {
       color: $header-font;
       font-weight: 600;
-      line-height: $header-height;
+      line-height: 43px;
       padding: 0 10px;
     }
     a:hover {
