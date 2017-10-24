@@ -6,8 +6,10 @@
     <div class="account-icon">
     </div>
     <div class="account-name-id">
-      <h2>がひゅー</h2>
-      <h3>@gahyuuuuuuuu</h3>
+      <label><a href="/users/<%= current_user.id %>" title="">
+        <h2><%= current_user.name %></h2>
+        <h3>@<%= current_user.user_identifier %></h3>
+      </a></label>
     </div>
   </div>
   </a>
