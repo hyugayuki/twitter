@@ -1,23 +1,26 @@
-<li class="one-tweet-content">
-  <div class="user-account-info">
-    <div class="icon-image">
+<% @tweets.each do |tweet| %>
+  <li class="one-tweet-content">
+    <div class="user-account-info">
+      <div class="icon-image">
+      </div>
     </div>
-  </div>
-  <div class="tweet-content">
-    <div class="tweet-header">
-      <span class="tweet-header_user-name">がひゅー</span>
-      <span class="tweet-header_user-id">@gahyuuuuuuuu</span>
-      <small>・</small>
-      <small class="tweetTime">20分前</small>
-      <em class="fa fa-angle-down"></em>
+    <div class="tweet-content">
+      <div class="tweet-header">
+        <span class="tweet-header_user-name"><%= tweet.user.name %></span>
+        <span class="tweet-header_user-id">@<%= tweet.user.user_identifier %></span>
+        <small>・</small>
+        <small class="tweetTime"><%= tweet.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+        <em class="fa fa-angle-down"></em>
+      </div>
+      <div class="tweet-text">
+        <%= simple_format(tweet.content) %>
+      </div>
+      <div class="tweet-footer">
+        <span class="fa fa-comment-o"></span>
+        <span class="fa fa-retweet"></span>
+        <span class="fa fa-heart-o"></span>
+        <span class="fa fa-envelope-o"></span>
+      </div>
     </div>
-    <div class="tweet-text">
-    </div>
-    <div class="tweet-footer">
-      <span class="fa fa-comment-o"></span>
-      <span class="fa fa-retweet"></span>
-      <span class="fa fa-heart-o"></span>
-      <span class="fa fa-envelope-o"></span>
-    </div>
-  </div>
-</li>
+  </li>
+<% end %>

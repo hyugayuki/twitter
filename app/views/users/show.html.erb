@@ -11,27 +11,27 @@
           <ul>
             <li><label><a href="">
               <div>ツイート</div>
-              <div> 5059</div></a></label>
+              <div class="length"> 5059</div></a></label>
             </li>
             <li><label><a href="">
               <div>フォロー</div>
-              <div> 505</div></a></label>
+              <div class="length"> 505</div></a></label>
             </li>
             <li><label><a href="">
               <div>
                 フォロワー
               </div>
-              <div>
+              <div class="length">
                 305
               </div></a></label>
             </li>
             <li><label><a href="">
               <div>リスト</div>
-              <div> 0</div></a></label>
-            </li>
+              <div class="length"> 0</div></a></label>
+            </li class="length">
             <li><label><a href="">
               <span>モーメント</span></br>
-              <span> 5</span></a></label>
+              <span class="length"> 5</span></a></label>
             </li>
           </ul>
         </li>
@@ -42,13 +42,16 @@
   <div class="bbbb">
     <div class="bbbb0">
       <div class="bbbb1">
-        <h3><%= current_user.name %></h3>
-        <h4> @<%= current_user.user_identifier %></h4>
+        <h3><%= @user.name %></h3>
+        <h4> @<%= @user.user_identifier %></h4>
       </div>
-      <div class="bbbb2">
+      <div class="bbbb2 tweets-wrapper">
+        <ol>
+          <%= render partial: "tweet_item" %>
+        </ol>
       </div>
       <div class="bbbb3">
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
