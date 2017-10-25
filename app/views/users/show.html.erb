@@ -42,13 +42,16 @@
   <div class="bbbb">
     <div class="bbbb0">
       <div class="bbbb1">
-        <h3><%= current_user.name %></h3>
-        <h4> @<%= current_user.user_identifier %></h4>
+        <h3><%= @user.name %></h3>
+        <h4> @<%= @user.user_identifier %></h4>
       </div>
-      <div class="bbbb2">
+      <div class="bbbb2 tweets-wrapper">
+        <ol>
+          <%= render partial: "tweet_item" %>
+        </ol>
       </div>
       <div class="bbbb3">
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

@@ -1,0 +1,26 @@
+<% @user.tweets.each do |t| %>
+<li class="one-tweet-content">
+  <div class="user-account-info">
+    <div class="icon-image">
+    </div>
+  </div>
+  <div class="tweet-content">
+    <div class="tweet-header">
+      <span class="tweet-header_user-name"><%= @user.name %></span>
+      <span class="tweet-header_user-id">@<%= @user.user_identifier %></span>
+      <small>・</small>
+      <small class="tweetTime"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+      <em class="fa fa-angle-down"></em>
+    </div>
+    <div class="tweet-text">
+      <%= simple_format(t.content) %>
+    </div>
+    <div class="tweet-footer">
+      <span class="fa fa-comment-o"></span>
+      <span class="fa fa-retweet"></span>
+      <span class="fa fa-heart-o"></span>
+      <span class="fa fa-envelope-o"></span>
+    </div>
+  </div>
+</li>
+<% end %>
