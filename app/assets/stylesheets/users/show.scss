@@ -26,6 +26,12 @@
           ul {
             margin-left: 200px;
             height: 60px;
+            li {
+              margin-right: 10px;
+              .length {
+                float: right;
+              }
+            }
           }
         }
         .icon {
