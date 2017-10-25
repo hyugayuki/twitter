@@ -1,9 +1,14 @@
 .header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
   color: $header-font;
   font-size: 14px;
   height: $header-height;
+  width: calc(100% - 240px);
   padding: 0 120px;
   line-height: $header-height;
+  background-color: white;
   border-bottom: solid 2px $header-border;
   .left-menus{
     float: left;
