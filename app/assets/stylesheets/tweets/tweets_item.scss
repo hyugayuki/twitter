@@ -44,8 +44,10 @@
           }
         }
         .tweet-text {
-          height: 80px;
-          background-color: whitesmoke;
+          min-height: 50px;
+          width: calc(100% - 20px);
+          margin-top: 5px;
+          font-size: 14px;
         }
         .tweet-footer {
           height: 20px;
