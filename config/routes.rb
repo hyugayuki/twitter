@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'tweets#index'
   resources :users
   resources :tweets
+  resources :relationships, only: [:create, :destroy]
 end
