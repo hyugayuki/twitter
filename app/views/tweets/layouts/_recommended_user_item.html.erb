@@ -1,0 +1,21 @@
+<% @users.each do |user| %>
+  <% unless user == current_user %>
+    <div class="user_list_item">
+      <div class="user_icon">
+      </div>
+      <div class="user_info_and_follow_req">
+        <p><%= user.name %> <span>@<%= user.user_identifier %></span></p>
+        <% if current_user.following?(user) %>
+            <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),html: { method: :delete }) do |f| %>
+              <%= f.submit "フォロー中", class: "btn" %>
+            <% end %>
+        <% else %>
+          <%= form_for(current_user.active_relationships.build) do |f| %>
+            <div><%= hidden_field_tag :followed_id, user.id %></div>
+            <%= f.submit "フォローする", class: "btn follow" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

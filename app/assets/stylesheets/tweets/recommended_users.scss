@@ -1,0 +1,70 @@
+.recommended_users {
+  background-color: white;
+  // height: 300px;
+  width: 100%;
+  .users_list {
+    padding: 15px 15px 0 15px;
+    border-bottom: 1px solid $header-border;
+    .user_list_titile {
+      h3 {
+        font-size: 17px;
+        font-weight: bold;
+      }
+    }
+    .user_list_items {
+      margin-top: 15px;
+      div:nth-last-child(1) {border-bottom:none;}
+      .user_list_item {
+        margin-top: 5px;
+        padding: 10px 0;
+        border-bottom: 1px solid $header-border;
+        @include clearfix();
+        .user_icon {
+          float: left;
+          background-color: gray;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .user_info_and_follow_req {
+          float: left;
+          width: calc(100% - 50px);
+          @include clearfix();
+          p {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .btn {
+            height: 24px;
+            display: block;
+            color: white;
+            font-size: 14px;
+            border-color: $blue;
+            background-color: $blue;
+            line-height: 25px;
+            margin: 2px 0;
+            padding: 0 15px;
+            border-radius: 12px;
+          }
+          .follow {
+            color: $blue;
+            background-color: white;
+            &:hover {
+              background-color: rgba(102, 204, 255,0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+  .recommendation_message {
+    padding: 10px 20px;
+    width: 200px;
+    p {
+      // margin: 0 auto;
+      font-size: 14px;
+      color: $blue;
+    }
+  }
+}
