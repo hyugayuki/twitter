@@ -6,7 +6,7 @@
     <div class="account-icon">
     </div>
     <div class="account-name-id">
-      <label><a href="/users/<%= current_user.id %>" title="">
+      <label><a href="/users/<%= current_user.id %>">
         <h2><%= current_user.name %></h2>
         <h3>@<%= current_user.user_identifier %></h3>
       </a></label>
@@ -25,13 +25,13 @@
         <li class="follow_user">
           <a>
             <span class="statusLabel">フォロー</span>
-            <span class="statusValue">559</span>
+            <span class="statusValue"><%= current_user.following.count %></span>
           </a>
         </li>
         <li class="followed_user">
           <a>
             <span class="statusLabel">フォロワー</span>
-            <span class="statusValue">362</span>
+            <span class="statusValue"><%= current_user.followers.count %></span>
           </a>
         </li>
       </ul>

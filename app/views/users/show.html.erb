@@ -11,18 +11,18 @@
           <ul>
             <li><label><a href="">
               <div>ツイート</div>
-              <div class="length"> 5059</div></a></label>
+              <div class="length"><%= @user.tweets.count %></div></a></label>
             </li>
             <li><label><a href="">
               <div>フォロー</div>
-              <div class="length"> 505</div></a></label>
+              <div class="length"><%= @user.following.count %></div></a></label>
             </li>
             <li><label><a href="">
               <div>
                 フォロワー
               </div>
               <div class="length">
-                305
+                <%= @user.followers.count %>
               </div></a></label>
             </li>
             <li><label><a href="">
@@ -35,7 +35,18 @@
             </li>
           </ul>
         </li>
-        <li>フォロー中</li>
+        <li class="follow_req">
+          <% if current_user.following?(@user) %>
+            <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),html: { method: :delete }) do |f| %>
+              <%= f.submit "フォロー中", class: "btn" %>
+            <% end %>
+          <% else %>
+            <%= form_for(current_user.active_relationships.build) do |f| %>
+              <div><%= hidden_field_tag :followed_id, @user.id %></div>
+              <%= f.submit "フォローする", class: "btn follow" %>
+            <% end %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
@@ -44,6 +55,7 @@
       <div class="bbbb1">
         <h3><%= @user.name %></h3>
         <h4> @<%= @user.user_identifier %></h4>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
       </div>
       <div class="bbbb2 tweets-wrapper">
         <ol>
