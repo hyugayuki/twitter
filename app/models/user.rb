@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+
   has_many :tweets
   #フォローしているユーザーをfollower_idという外部キーを使って特定しなくてはなりません。また、followerというクラス名は存在しないので、ここでもRailsに正しいクラス名を伝える必要が発生します。⬇️
   has_many :active_relationships, class_name:  "Relationship",
@@ -16,7 +17,7 @@ class User < ApplicationRecord
 
   validates :name, null: false
   validates :user_identifier, null: false
-
+  mount_uploader :image, ImageUploader
     # ユーザーをフォローする
    def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
