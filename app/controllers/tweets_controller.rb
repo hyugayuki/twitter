@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all.order('created_at DESC')
+    timeLine_user_ids = current_user.following.ids << current_user.id
+    @tweets = Tweet.where(user_id: timeLine_user_ids).order('created_at DESC')
+    @users = User.where.not(id: current_user.following.ids)
   end
 
   def create

@@ -6,8 +6,10 @@
     </div>
     <div class="tweet-content">
       <div class="tweet-header">
-        <span class="tweet-header_user-name"><%= tweet.user.name %></span>
-        <span class="tweet-header_user-id">@<%= tweet.user.user_identifier %></span>
+        <a href="/users/<%= tweet.user.id %>">
+          <span class="tweet-header_user-name"><%= tweet.user.name %></span>
+          <span class="tweet-header_user-id">@<%= tweet.user.user_identifier %></span>
+        </a>
         <small>・</small>
         <small class="tweetTime"><%= tweet.created_at.strftime("%Y-%m-%d %H:%M") %></small>
         <em class="fa fa-angle-down"></em>

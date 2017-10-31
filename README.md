@@ -32,20 +32,23 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 
 ### Association
-- has_many :followers
 - has_many :tweets
+- has_many :following, through: :active_relationships, source: :followed
+- has_many :followers, through: :passive_relationships, source: :followerss
 - has_many :favorites
 
 
-## followesテーブル
+## Relstionshipsテーブル
 
 |column|type|options|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true|
 |follower_id|integer|null: false|
+|followed_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :follower, class_name: "User"
+- belongs_to :followed, class_name: "User"
+
 
 
 ## tweetsテーブル
