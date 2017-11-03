@@ -3,7 +3,7 @@
   </div>
   <a href="#" >
   <div class="account-idenfication">
-    <div class="account-icon" style="background-image:url(<%= current_user.image.to_s %>"%>
+    <div class="account-icon" style="background-image:url(<%= current_user.image.account_info.to_s %>">
     </div>
     <div class="account-name-id">
       <label><a href="/users/<%= current_user.id %>">

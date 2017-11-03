@@ -1,7 +1,7 @@
 <% @user.tweets.each do |t| %>
 <li class="one-tweet-content">
   <div class="user-account-info">
-    <div class="icon-image">
+    <div class="icon-image" style="background-image:url(<%= t.user.image.tweet_item.to_s %>)">
     </div>
   </div>
   <div class="tweet-content">
