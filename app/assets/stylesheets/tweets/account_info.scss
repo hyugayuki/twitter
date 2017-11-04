@@ -23,15 +23,22 @@
     .account-name-id {
       float: left;
       width: 130px;
+      height: 60px;
       padding-top: 5px;
       margin-left: 90px;
-      h2 {
+      span {
         font-weight: bold;
         font-size: 18px;
       }
-      h3 {
+      span:hover {
+        border-bottom: 1px solid black;
+      }
+      div {
         color: #666666;
         font-size: 13px;
+      }
+      em:hover {
+        border-bottom: 1px solid #666666;
       }
     }
   }

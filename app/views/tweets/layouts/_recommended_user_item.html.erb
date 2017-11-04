@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
   <% unless user == current_user %>
     <div class="user_list_item">
-      <div class="user_icon">
+      <div class="user_icon" style="background-image:url(<%= user.image.recommended_users.to_s %>">
       </div>
       <div class="user_info_and_follow_req">
         <p><%= user.name %> <span>@<%= user.user_identifier %></span></p>

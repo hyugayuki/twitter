@@ -1,18 +1,21 @@
 <div class="account-info">
   <div class="header-image">
   </div>
-  <a href="#" >
   <div class="account-idenfication">
-    <div class="account-icon" style="background-image:url(<%= current_user.image.to_s %>"%>
-    </div>
+    <label><a href="/users/<%= current_user.id %>">
+    <p class="account-icon" style="background-image:url(<%= current_user.image.account_info.to_s %>">
+    </p></a></label>
     <div class="account-name-id">
-      <label><a href="/users/<%= current_user.id %>">
-        <h2><%= current_user.name %></h2>
-        <h3>@<%= current_user.user_identifier %></h3>
-      </a></label>
+      <div>
+        <a href="/users/<%= current_user.id %>">
+          <span><%= current_user.name %></span>
+        </a>
+      </div>
+      <a href="/users/<%= current_user.id %>">
+        <em>@<%= current_user.user_identifier %></em>
+      </a>
     </div>
   </div>
-  </a>
   <div class="account-incidental">
     <div class="incidential-list">
       <ul>
