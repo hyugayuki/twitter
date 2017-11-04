@@ -36,14 +36,18 @@
           </ul>
         </li>
         <li class="follow_req">
-          <% if current_user.following?(@user) %>
-            <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),html: { method: :delete }) do |f| %>
-              <%= f.submit "フォロー中", class: "btn" %>
-            <% end %>
+          <% if current_user==@user %>
+            <%= link_to "プロフィール編集", edit_user_registration_path, class: 'btn' %>
           <% else %>
-            <%= form_for(current_user.active_relationships.build) do |f| %>
-              <div><%= hidden_field_tag :followed_id, @user.id %></div>
-              <%= f.submit "フォローする", class: "btn follow" %>
+            <% if current_user.following?(@user) %>
+              <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),html: { method: :delete }) do |f| %>
+                <%= f.submit "フォロー中", class: "btn" %>
+              <% end %>
+            <% else %>
+              <%= form_for(current_user.active_relationships.build) do |f| %>
+                <div><%= hidden_field_tag :followed_id, @user.id %></div>
+                <%= f.submit "フォローする", class: "btn follow" %>
+              <% end %>
             <% end %>
           <% end %>
         </li>
@@ -55,8 +59,9 @@
       <div class="bbbb1">
         <h3><%= @user.name %></h3>
         <h4> @<%= @user.user_identifier %></h4>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
-        <%= link_to "編集", edit_user_registration_path, class: 'btn' %>
+        <% if current_user==@user %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+        <% end %>
       </div>
       <div class="bbbb2 tweets-wrapper">
         <ol>
