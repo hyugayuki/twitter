@@ -7,15 +7,21 @@
       <div class="textarea">
         <%= f.text_area :content, autofocus: true, placeholder: "いまどうしてる？", class: "form-control" %>
       </div>
+      <div class="images_preview_area">
+      </div>
       <div class="post_modal_footer">
-        <label>
-          <input type="file" name="" style="display:none;">
-          <i class="fa fa-image"></i>
-        </label>
-        <i class="fa fa-money"></i>
-        <i class="fa fa-tasks"></i>
-        <i class="fa fa-map-marker"></i>
-        <%= f.submit :ツイート, class: "submit-btn" %>
+          <div class="icons", id="append_file_field">
+            <%= f.fields_for :images do |i| %>
+              <label class="label-item" id="label_0">
+                <i class="fa fa-image"></i>
+                <%= i.file_field :file, name: "tweet[images_attributes][0][file]",id: "file", style: "display:none;" %>
+              </label>
+            <% end %>
+          </div>
+          <i class="fa fa-money icons"></i>
+          <i class="fa fa-tasks icons"></i>
+          <i class="fa fa-map-marker icons"></i>
+          <%= f.submit :ツイート, class: "submit-btn" %>
       </div>
     </div>
   <% end %>
