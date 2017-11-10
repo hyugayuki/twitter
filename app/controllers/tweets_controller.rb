@@ -6,7 +6,6 @@ class TweetsController < ApplicationController
   end
 
   def create
-    binding.pry
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       redirect_to root_path
