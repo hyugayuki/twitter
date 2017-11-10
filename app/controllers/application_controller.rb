@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def set_tweet
     @tweet = Tweet.new
+    @tweet.images.build
   end
 
 end

@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
   end
 
   def create
+    binding.pry
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       redirect_to root_path
@@ -16,6 +17,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:content)
+    params.require(:tweet).permit(:content, images_attributes: [:file])
   end
+
 end

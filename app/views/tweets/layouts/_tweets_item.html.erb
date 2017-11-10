@@ -16,6 +16,9 @@
       </div>
       <div class="tweet-text">
         <%= simple_format(tweet.content) %>
+        <% tweet.images.each do |image| %>
+          <img src="<%= image.file.sample.to_s %>">
+        <% end %>
       </div>
       <div class="tweet-footer">
         <span class="fa fa-comment-o"></span>

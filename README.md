@@ -107,7 +107,7 @@ Things you may want to cover:
 |column|type|options|
 |------|----|------|
 |tweet_id|integer|null: false, foreign_key: true|
-|image|string|null: false|
+|file|string|null: false|
 
 ### Association
 - belongs_to :tweet
