@@ -21,7 +21,6 @@
         float: left;
         width: 500px;
         min-height: 100px;
-        // background-color: yellow;
         .tweet-header {
           position: relative;
           height: 20px;
@@ -48,6 +47,10 @@
           width: calc(100% - 20px);
           margin-top: 5px;
           font-size: 14px;
+          img {
+            display: block;
+            margin: 10px auto 0;
+          }
         }
         .tweet-footer {
           height: 20px;
