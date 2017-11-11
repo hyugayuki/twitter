@@ -20,16 +20,16 @@
     <div class="incidential-list">
       <ul>
         <li class="tweets">
-          <a>
+          <a href="/users/<%= current_user.id %>">
             <span class="statusLabel">ツイート</span>
             <span class="statusValue"><%= current_user.tweets.count %></span>
           </a>
         </li>
         <li class="follow_user">
-          <a href="<%= following_users_path(current_user) %>">
+          <label><a href="<%= following_users_path(current_user) %>">
             <span class="statusLabel">フォロー</span>
             <span class="statusValue"><%= current_user.following.count %></span>
-          </a>
+          </a></label>
         </li>
         <li class="followed_user">
           <a href="<%= followers_users_path(current_user) %>">

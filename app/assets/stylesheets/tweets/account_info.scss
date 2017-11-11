@@ -44,35 +44,39 @@
   }
   .account-incidental {
     height: 60px;
-    background-color: snow;
     .incidential-list {
-      height: 37px;
-      padding: 0 15px 10px;
-      .tweets {
-        width: 100px;
-      }
-      .follow_user {
-        width: 75px;
-      }
-      .followed_user {
-        width: 75px;
-      }
-      li {
-        float: left;
-        // width: 70px;
-        span {
-          display: block;
+      // height: 50px;
+      padding: 0 15px;
+      ul {
+        .tweets {
+          width: 70px;
         }
-        .statusLabel {
-          font-weight: 600;
-          font-size: 12px;
-          color: gray;
+        .follow_user {
+          width: 50px;
         }
-        .statusValue {
-          line-height: 20px;
-          font-size: 16px;
-          font-weight: bold;
-          color: dodgerblue;
+        .followed_user {
+          width: 60px;
+        }
+        li {
+          margin-right: 20px;
+          float: left;
+          a {
+            display: block;
+            .statusLabel {
+              font-weight: 600;
+              font-size: 12px;
+              color: gray;
+            }
+            .statusValue {
+              line-height: 20px;
+              font-size: 16px;
+              font-weight: bold;
+              color: dodgerblue;
+              height: 20px;
+              display: block;
+              margin-left: 5px;
+            }
+          }
         }
       }
     }
