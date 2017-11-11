@@ -13,11 +13,11 @@
               <div>ツイート</div>
               <div class="length"><%= @user.tweets.count %></div></a></label>
             </li>
-            <li><label><a href="">
+            <li><label><a href="<%= following_users_path(@user) %>">
               <div>フォロー</div>
               <div class="length"><%= @user.following.count %></div></a></label>
             </li>
-            <li><label><a href="">
+            <li><label><a href="<%= followers_users_path(@user) %>">
               <div>
                 フォロワー
               </div>

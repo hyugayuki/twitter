@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'tweets#index'
-  resources :users
+  resources :users do
+    collection do
+      get :following, :followers
+    end
+  end
   resources :tweets do
     resources :images
   end
