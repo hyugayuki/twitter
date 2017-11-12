@@ -1,3 +1,17 @@
 <%= render partial: "header/header" %>
-
-<h1>followeingこんばんはーーーーーーーーー</h1>
+<%= render partial: "users/layouts/common_template" %>
+<div class="ss">
+  <div class="bbbb">
+    <div class="bbbb0">
+      <div class="bbbb1">
+        <h3><%= @user.name %></h3>
+        <h4> @<%= @user.user_identifier %></h4>
+        <% if current_user==@user %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+        <% end %>
+      </div>
+      <div class="bbbb2">
+        <%= render partial: "users/layouts/following_user_item" %>
+      </div>
+  </div>
+</div>

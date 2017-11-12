@@ -1,59 +1,6 @@
 <%= render partial: "header/header" %>
-
-<div class="s">
-  <div class="aaaa">
-    <div class="aaaa1">
-    </div>
-    <div class="aaaa2">
-      <ul>
-        <li class="icon" style="background-image:url(<%= @user.image.users_show.to_s %>"></li>
-        <li>
-          <ul>
-            <li><label><a href="">
-              <div>ツイート</div>
-              <div class="length"><%= @user.tweets.count %></div></a></label>
-            </li>
-            <li><label><a href="<%= following_users_path(@user) %>">
-              <div>フォロー</div>
-              <div class="length"><%= @user.following.count %></div></a></label>
-            </li>
-            <li><label><a href="<%= followers_users_path(@user) %>">
-              <div>
-                フォロワー
-              </div>
-              <div class="length">
-                <%= @user.followers.count %>
-              </div></a></label>
-            </li>
-            <li><label><a href="">
-              <div>リスト</div>
-              <div class="length"> 0</div></a></label>
-            </li class="length">
-            <li><label><a href="">
-              <span>モーメント</span></br>
-              <span class="length"> 5</span></a></label>
-            </li>
-          </ul>
-        </li>
-        <li class="follow_req">
-          <% if current_user==@user %>
-            <%= link_to "プロフィール編集", edit_user_registration_path, class: 'btn' %>
-          <% else %>
-            <% if current_user.following?(@user) %>
-              <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),html: { method: :delete }) do |f| %>
-                <%= f.submit "フォロー中", class: "btn" %>
-              <% end %>
-            <% else %>
-              <%= form_for(current_user.active_relationships.build) do |f| %>
-                <div><%= hidden_field_tag :followed_id, @user.id %></div>
-                <%= f.submit "フォローする", class: "btn follow" %>
-              <% end %>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
+<%= render partial: "users/layouts/common_template" %>
+<div class="ss">
   <div class="bbbb">
     <div class="bbbb0">
       <div class="bbbb1">
@@ -65,11 +12,12 @@
       </div>
       <div class="bbbb2 tweets-wrapper">
         <ol>
-          <%= render partial: "tweet_item" %>
+          <%= render partial: "users/layouts/tweet_item" %>
         </ol>
       </div>
-      <div class="bbbb3">
+      <div class="bbbb3 recommended_users">
+        <%= render partial: "tweets/layouts/recommended_users" %>
       </div>
     </div>
   </div>
-<!-- </div> -->
+</div>

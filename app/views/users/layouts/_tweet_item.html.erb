@@ -1,4 +1,4 @@
-<% @user.tweets.each do |t| %>
+<% @tweets.each do |t| %>
 <li class="one-tweet-content">
   <div class="user-account-info">
     <div class="icon-image" style="background-image:url(<%= t.user.image.tweet_item.to_s %>)">
@@ -14,6 +14,9 @@
     </div>
     <div class="tweet-text">
       <%= simple_format(t.content) %>
+      <% t.images.each do |image| %>
+          <img src="<%= image.file.sample.to_s %>">
+      <% end %>
     </div>
     <div class="tweet-footer">
       <span class="fa fa-comment-o"></span>
