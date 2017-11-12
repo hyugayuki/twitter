@@ -3,8 +3,9 @@
     <div class="user_header">
     </div>
     <div class="user_info">
-      <div class="user_icon" style="background-image:url(<%= user.image.account_info.to_s %>)" >
-      </div>
+      <a href="/users/<%= user.id %>">
+        <div class="user_icon" style="background-image:url(<%= user.image.account_info.to_s %>)" ></div>
+      </a>
       <div class="follow_request">
          <% if current_user.following?(user) %>
             <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),html: { method: :delete }) do |f| %>
@@ -19,10 +20,12 @@
       </div>
       <div class="user_status">
         <div class="user_name">
-          <%= user.name %>
+          <label><a href="/users/<%= user.id %>">
+          <%= user.name %></a></label>
         </div>
         <div class="user_identifier">
-          @<%= user.user_identifier %>
+          <label><a href="/users/<%= user.id %>">
+          @<%= user.user_identifier %></a></label>
         </div>
       </div>
     </div>

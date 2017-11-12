@@ -46,11 +46,20 @@
         font-weight: bold;
         font-size: 18px;
         margin-left: 5px;
+        a {
+          color: black;
+        }
+        a:hover {
+          border-bottom: 1px solid;
+        }
       }
       .user_identifier {
         color: gray;
         font-size: 14px;
         margin-left: 5px;
+        a:hover {
+          border-bottom: 1px solid;
+        }
       }
     }
   }
