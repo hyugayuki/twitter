@@ -12,7 +12,11 @@
       </div>
       <div class="bbbb2 tweets-wrapper">
         <ol>
-          <%= render partial: "users/layouts/tweet_item" %>
+          <% if @tweets.count != 0 %>
+            <%= render partial: "users/layouts/tweet_item" %>
+          <% else %>
+            <li>まだツイートがありません</li>
+          <% end %>
         </ol>
       </div>
       <div class="bbbb3 recommended_users">
