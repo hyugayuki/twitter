@@ -10,13 +10,8 @@
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
         <% end %>
       </div>
-      <div class="bbbb2 tweets-wrapper">
-        <ol>
-          <%= render partial: "users/layouts/tweet_item" %>
-        </ol>
-      </div>
-      <div class="bbbb3 recommended_users">
-        <%= render partial: "tweets/layouts/recommended_users" %>
+      <div class="bbbb2">
+        <%= render partial: "users/layouts/follower_user_item" %>
       </div>
     </div>
   </div>

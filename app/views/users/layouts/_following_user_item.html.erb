@@ -1,0 +1,30 @@
+<% @followings.each do |user| %>
+  <div class="user_item">
+    <div class="user_header">
+    </div>
+    <div class="user_info">
+      <div class="user_icon" style="background-image:url(<%= user.image.account_info.to_s %>)" >
+      </div>
+      <div class="follow_request">
+         <% if current_user.following?(user) %>
+            <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),html: { method: :delete }) do |f| %>
+              <%= f.submit "フォロー中", class: "btn" %>
+            <% end %>
+        <% else %>
+          <%= form_for(current_user.active_relationships.build) do |f| %>
+            <div><%= hidden_field_tag :followed_id, user.id %></div>
+            <%= f.submit "フォローする", class: "btn follow" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="user_status">
+        <div class="user_name">
+          <%= user.name %>
+        </div>
+        <div class="user_identifier">
+          @<%= user.user_identifier %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
