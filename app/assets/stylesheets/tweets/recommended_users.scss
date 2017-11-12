@@ -25,15 +25,27 @@
           height: 40px;
           width: 40px;
           border-radius: 50%;
-          margin-right: 10px;
+          margin: 5px 10px 0 0;
         }
         .user_info_and_follow_req {
           float: left;
           width: calc(100% - 50px);
           @include clearfix();
-          p {
-            font-size: 14px;
-            font-weight: bold;
+          a:hover {
+            #user_name {
+              border-bottom: 1px solid;
+            }
+          }
+          a {
+            #user_name {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            #user_identifier {
+              font-size: 14px;
+              font-weight: normal;
+              color: gray;
+            }
           }
           .btn {
             height: 24px;

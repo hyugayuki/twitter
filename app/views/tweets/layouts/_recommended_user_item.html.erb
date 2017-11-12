@@ -1,10 +1,11 @@
 <% @users.each do |user| %>
   <% unless user == current_user %>
     <div class="user_list_item">
-      <div class="user_icon" style="background-image:url(<%= user.image.recommended_users.to_s %>">
-      </div>
+      <a href="/users/<%= user.id %>">
+        <div class="user_icon" style="background-image:url(<%= user.image.recommended_users.to_s %>"></div>
+      </a>
       <div class="user_info_and_follow_req">
-        <p><%= user.name %> <span>@<%= user.user_identifier %></span></p>
+        <label><a href="/users/<%= user.id %>"><span id="user_name"><%= user.name %></span>・<span id="user_identifier">@<%= user.user_identifier %></span></a></label>
         <% if current_user.following?(user) %>
             <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),html: { method: :delete }) do |f| %>
               <%= f.submit "フォロー中", class: "btn" %>
