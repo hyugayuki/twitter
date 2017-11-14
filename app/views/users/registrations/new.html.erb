@@ -1,44 +1,34 @@
-<h2>Sign up</h2>
+<div class="devise">
+  <h2>Twitterを始めよう！</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :name %> <br />
-    <%= f.text_field :name, autofocus: true %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: "名前（ニックネーム）", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :user_identifier , placeholder: "ユーザーID"%>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, placeholder: "パスワード(最低６文字)", autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, placeholder: "パスワード(確認用)", autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "アカウント作成" %>
+    </div>
+  <% end %>
+  <div class="shared">
+    <%= render "users/shared/links" %>
   </div>
-
-  <div class="field">
-    <%= f.label :icon %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="field">
-    <%= f.label "user-id" %> <br />
-    <%= f.text_field :user_identifier %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
