@@ -1,0 +1,67 @@
+.devise  {
+  margin: 120px auto ;
+  width: 400px;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    height: 20px;
+    width: 200px;
+    margin: 0 auto 20px;
+  }
+  form {
+    .field {
+      label {
+        margin: 0 20px;
+      }
+      input {
+        padding: 10px;
+        width: 400px;
+        height: 60px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+        outline: none;
+      }
+    }
+    .actions {
+      margin: 10px 0;
+      input {
+        color: white;
+        background-color: $blue;
+        width: 400px;
+        height: 40px;
+        border-radius: 20px;
+      }
+    }
+  }
+  .shared {
+    margin-top: 30px;
+    h3 {
+      color: gray;
+    }
+    a {
+      color: white;
+      background-color: $blue;
+      display: block;
+      width: 400px;
+      height: 40px;
+      border-radius: 20px;
+      line-height: 40px;
+      padding: 0 130px;
+      box-sizing: border-box;
+    }
+    form {
+      input {
+        color: white;
+        background-color: $blue;
+        display: block;
+        width: 400px;
+        height: 40px;
+        border-radius: 20px;
+        line-height: 40px;
+        padding: 0 130px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
