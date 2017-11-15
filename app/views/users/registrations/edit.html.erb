@@ -18,6 +18,11 @@
       <%= f.file_field :image %>
     </div>
 
+    <div class="field">
+      <%= f.label :ヘッダー画像 %><br />
+      <%= f.file_field :header_image %>
+    </div>
+
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>

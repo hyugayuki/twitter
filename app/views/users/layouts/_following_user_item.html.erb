@@ -1,6 +1,6 @@
 <% @followings.each do |user| %>
   <div class="user_item">
-    <div class="user_header">
+    <div class="user_header" style="background-image:url(<%= user.header_image.relationships.to_s %>)">
     </div>
     <div class="user_info">
       <a href="/users/<%= user.id %>">
