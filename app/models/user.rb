@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :name, null: false
   validates :user_identifier, null: false
   mount_uploader :image, ImageUploader
+  mount_uploader :header_image, HeaderUploader
     # ユーザーをフォローする
    def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
