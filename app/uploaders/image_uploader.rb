@@ -3,27 +3,27 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # process resize_to_limit: [300, 200]
   version :account_info do
-        process resize_to_limit: [68, 68]
+        process resize_to_fill: [68, 68]
   end
 
   version :tweet_item do
-        process resize_to_limit: [40, 40]
+        process resize_to_fill: [40, 40]
   end
 
   version :recommended_users do
-        process resize_to_limit: [40, 40]
+        process resize_to_fill: [40, 40]
   end
 
   version :users_show do
-        process resize_to_limit: [200, 200]
+        process resize_to_fill: [200, 200]
   end
 
   version :post_area do
-        process resize_to_limit: [30, 30]
+        process resize_to_fill: [30, 30]
   end
 
   version :header_icon do
-        process resize_to_limit: [30, 30]
+        process resize_to_fill: [30, 30]
   end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
