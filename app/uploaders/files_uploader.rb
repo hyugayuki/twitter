@@ -4,7 +4,7 @@ class FilesUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   version :sample do
-        process resize_to_limit: [480, 700]
+        process resize_to_fill: [480, 700]
   end
 
   # Choose what kind of storage to use for this uploader:

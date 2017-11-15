@@ -4,15 +4,15 @@ class HeaderUploader < CarrierWave::Uploader::Base
   # process resize_to_limit: [300, 200]
 
   version :users_controller_template do
-        process resize_to_limit: [1440, 360]
+        process resize_to_fill: [1440, 360]
   end
 
   version :home do
-        process resize_to_limit: [300, 100]
+        process resize_to_fill: [300, 100]
   end
 
   version :relationships do
-        process resize_to_limit: [290, 100]
+        process resize_to_fill: [290, 100]
   end
 
   # Include RMagick or MiniMagick support:
