@@ -14,7 +14,7 @@
             <%= f.fields_for :images do |i| %>
               <label class="label-item" id="label_0">
                 <i class="fa fa-image"></i>
-                <%= i.file_field :file, name: "tweet[images_attributes][0][file]",id: "file", style: "display:none;" %>
+                <%= i.file_field :file, name: "tweet[images_attributes][0][file]",class: "file_field", style: "display:none;" %>
               </label>
             <% end %>
           </div>

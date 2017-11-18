@@ -3,7 +3,7 @@ $(function(){
     var html = `
     <label class="label-item" id="label_${order}">
       <i class="fa fa-image"></i>
-      <input type="file", name="tweet[images_attributes][${order}][file]", id="file", style="display:none;">
+      <input type="file", name="tweet[images_attributes][${order}][file]", class="file_field", style="display:none;">
     </label>
     `
     return html;
@@ -18,10 +18,9 @@ $(function(){
   }
 
 
-// イベント
+// 画像の投稿
   var new_file_id = $('.label-item').length;
-  console.log("hello");
-  $(document).on('input change','#file', function(e){// input の追加
+  $(document).on('input change','.file_field', function(e){// input の追加
     var labelLength = $('.label-item').length;
     if(labelLength < 4){
       $('.label-item').css('display', 'none');
@@ -37,18 +36,16 @@ $(function(){
         reader = new FileReader(),
         $preview = $(".images_preview_area");
         t = this;
+
     // 画像ファイル以外の場合は何もしない
     if(file.type.indexOf("image") < 0){
       return false;
     }
-
+    // プレビュー表示
     reader.onload = (function(file) {
       return function(e) {
-      $preview.append(buildButton(new_file_id));
-      // new_file_id ++;
-      var preview_image_item = $("#preview_item_"+ new_file_id);
-      new_file_id ++;
-      console.log(new_file_id);
+        $preview.append(buildButton(new_file_id));
+        var preview_image_item = $("#preview_item_"+ new_file_id);
         preview_image_item.append($('<img>').attr({
           src: e.target.result,
           width: "100px",
@@ -56,13 +53,14 @@ $(function(){
           class: "preview",
           title: file.name
         }));
+        new_file_id ++;
       };
     })(file);
 
     reader.readAsDataURL(file);
   });
 
-//画像ファイルプレビューの消去
+//画像プレビューと投稿の消去
   $(document).on('click','.close-preview', function(e){
     console.log("消去ボタンがクリックされました");
     var data = (this).getAttribute("data-image");
