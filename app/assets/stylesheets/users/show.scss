@@ -1,46 +1,35 @@
-.ss {
-  .bbbb {
-    min-height: 400px;
-    background-color: #e6ecf0;
-    width: 100%;
-    padding-top: 10px;
-    height: auto;
-    .bbbb0 {
-      margin: 0 auto;
-      height: auto;
-      width: calc(100% - 240px);
-      @include clearfix();
-      .bbbb1{
-        margin-top: 30px;
-        padding: 0 20px;
-        float: left;
-        width: 300px;
-        box-sizing: border-box;
-        h3 {
-          font-size: 22px;
-          font-weight: bold;
-        }
-        h4 {
-          font-size: 14px;
-          color: #666666;
-        }
-      }
-      .bbbb2 {
-        float: left;
-        width:  calc(100% - 300px);
-        @include clearfix();
-      }
-      .tweets-wrapper {
-        float: left;
-        width :580px;
-        margin: 0 10px;
-        @include clearfix();
-      }
-      .bbbb3 {
-        background-color: white;
-        float: left;
-        width: 300px;
-      }
+.main_content {
+  min-height: 400px;
+  background-color: #e6ecf0;
+  padding-top: 10px;
+  @include clearfix();
+  display: flex;
+  .margin {
+    flex: 1 1 auto;
+  }
+  .left_info{
+    margin-top: 30px;
+    padding: 0 20px;
+    flex: 0 1 300px;
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
     }
+    h4 {
+      font-size: 14px;
+      color: #666666;
+    }
+  }
+  .user_content {
+    flex: 0 1 900px;
+    @include clearfix();
+  }
+  .tweets-wrapper {
+    flex : 0 0 580px;
+    margin: 0 10px;
+    @include clearfix();
+  }
+  .right_bar {
+    flex: 0 1 300px;
   }
 }
