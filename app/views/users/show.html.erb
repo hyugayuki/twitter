@@ -1,27 +1,27 @@
 <%= render partial: "header/header" %>
 <%= render partial: "users/layouts/common_template" %>
-<div class="ss">
-  <div class="bbbb">
-    <div class="bbbb0">
-      <div class="bbbb1">
-        <h3><%= @user.name %></h3>
-        <h4> @<%= @user.user_identifier %></h4>
-        <% if current_user==@user %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
-        <% end %>
-      </div>
-      <div class="bbbb2 tweets-wrapper">
-        <ol>
-          <% if @tweets.count != 0 %>
-            <%= render partial: "users/layouts/tweet_item" %>
-          <% else %>
-            <li>まだツイートがありません</li>
-          <% end %>
-        </ol>
-      </div>
-      <div class="bbbb3 recommended_users">
-        <%= render partial: "tweets/layouts/recommended_users" %>
-      </div>
+<div class="main_content">
+  <div class="margin"></div>
+  <div class="left_info">
+    <h3><%= @user.name %></h3>
+    <h4> @<%= @user.user_identifier %></h4>
+    <% if current_user==@user %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+    <% end %>
+  </div>
+  <div class="tweets-wrapper">
+    <ol>
+      <% if @tweets.count != 0 %>
+        <%= render partial: "users/layouts/tweet_item" %>
+      <% else %>
+        <li>まだツイートがありません</li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="right_bar">
+    <div class="recommended_users">
+      <%= render partial: "tweets/layouts/recommended_users" %>
     </div>
   </div>
+  <div class="margin"></div>
 </div>
