@@ -17,12 +17,12 @@ $(function(){
     $("#post-modal").fadeOut();
   });
 
-  $('#display-message-modal').click(function(){
-    $("#message-modal").fadeIn();
-  });
+  // $('#display-message-modal').click(function(){
+  //   $("#message-modal").fadeIn();
+  // });
 
-  $('.colse-modal-area').click(function(){
-    $("#message-modal").fadeOut();
-  });
+  // $('.colse-modal-area').click(function(){
+  //   $("#message-modal").fadeOut();
+  // });
 });
 
