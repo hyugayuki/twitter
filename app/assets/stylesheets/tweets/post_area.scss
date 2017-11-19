@@ -1,6 +1,5 @@
 .post_area {
   height: auto;
-  padding-bottom: 10px;
   background-color: #CCFFFF;
   border-bottom: solid 1px $header-border;
   @include clearfix();
@@ -8,7 +7,9 @@
     position: relative;
     height: auto;
     padding: 10px 15px 15px 25px;
+    display: flex;
     #post-textarea {
+      flex: 1 1 auto;
       .main_textarea_area {
         textarea {
           height: 70px;
@@ -23,7 +24,6 @@
         }
         #post-textarea-footer {
           height: 30px;
-          width: 490px;
           margin: 10px 0;
           i {
             color: $blue;
@@ -46,10 +46,11 @@
         }
       }
     }
-    li {
-      float: left;
+    .user_icon_area {
       height: auto;
       line-height: 30px;
+      width: 100%;
+      flex: 0 0 40px;
       .user-icon{
         height: 30px;
         width: 30px;
@@ -57,14 +58,18 @@
         background-color: white;
         margin: 5px 10px 0 0;
       }
+    }
+    #post-input-fadeOut {
+      flex: 1 1 auto;
+      // width: 100%;
+      display: block;
       input {
-        height: 25px;
+        height: 35px;
         padding: 5px;
-        width: 485px;
+        width: 100%;
         outline: none;
         border: solid 1px $blue;
         border-radius: 10px;
-        color: blue;
         font-size: 12px;
       }
       span {
@@ -76,7 +81,6 @@
       span:hover {
         cursor: pointer;
       }
-
     }
   }
 }

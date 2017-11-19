@@ -1,69 +1,67 @@
 .tweets-wrapper {
-    width: 580px;
+  @include clearfix();
+  li {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border-bottom: solid 1px $header-border;
     @include clearfix();
-    li {
-      width: 550px;
-      padding: 15px;
-      background-color: white;
-      border-bottom: solid 1px $header-border;
-      @include clearfix();
-      .user-account-info {
-        float: left;
-        margin: 5px 10px 0 0;
-        .icon-image {
-          height: 40px;
-          width: 40px;
-          border-radius: 20px;
-          background-color: $blue;
+    display: flex;
+    .user-account-info {
+      margin: 5px 10px 0 0;
+      .icon-image {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+        background-color: $blue;
+      }
+    }
+    .tweet-content {
+      width: 500px;
+      min-height: 100px;
+      .tweet-header {
+        position: relative;
+        height: 20px;
+        background-color: white;
+        .tweet-header_user-name {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .tweet-header_user-id {
+          color: $header-font;
+          font-size: 12px;
+        }
+        .tweetTime {
+          color: $header-font;
+          font-size: 12px;
+        }
+        em {
+          position: absolute;
+          right: 10px;
         }
       }
-      .tweet-content {
-        float: left;
-        width: 500px;
-        min-height: 100px;
-        .tweet-header {
-          position: relative;
-          height: 20px;
-          background-color: white;
-          .tweet-header_user-name {
-            font-size: 14px;
-            font-weight: bold;
-          }
-          .tweet-header_user-id {
-            color: $header-font;
-            font-size: 12px;
-          }
-          .tweetTime {
-            color: $header-font;
-            font-size: 12px;
-          }
-          em {
-            position: absolute;
-            right: 10px;
-          }
+      .tweet-text {
+        min-height: 50px;
+        width: calc(100% - 20px);
+        margin-top: 5px;
+        font-size: 14px;
+        img {
+          display: block;
+          margin: 10px auto 0;
         }
-        .tweet-text {
-          min-height: 50px;
-          width: calc(100% - 20px);
-          margin-top: 5px;
-          font-size: 14px;
-          img {
-            display: block;
-            margin: 10px auto 0;
-          }
-        }
-        .tweet-footer {
-          height: 20px;
-          margin-top: 5px;
-          background-color: white;
-          span {
-            float: left;
-            color: $header-font;
-            font-weight: 200;
-            padding: 0 5px;
-            margin-right: 50px;
-          }
+      }
+      .tweet-footer {
+        height: 20px;
+        margin-top: 5px;
+        background-color: white;
+        span {
+          float: left;
+          color: $header-font;
+          font-weight: 200;
+          padding: 0 5px;
+          margin-right: 50px;
         }
       }
     }
+  }
 }

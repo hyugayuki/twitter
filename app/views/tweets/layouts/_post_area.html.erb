@@ -1,14 +1,14 @@
 <div class="post_area">
   <%= form_for @tweet do |f| %>
     <ul>
-      <li>
+      <li class="user_icon_area">
         <div class="user-icon" style="background-image:url(<%= current_user.image.post_area.to_s %>">
         </div>
       </li>
       <li id="post-input-fadeOut">
         <%= f.text_field :content, placeholder: "いまどうしてる？" %>
         <label>
-          <input type="file" name="" style="display:none;">
+          <input type="file" style="display:none;">
           <span class="fa fa-image"></span>
         </label>
       </li>
