@@ -15,6 +15,10 @@ html{
     width: 100%;
 }
 
+html * {
+    box-sizing: border-box;
+}
+
 body {
     height: 100%;
     width: 100%;
