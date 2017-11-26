@@ -1,3 +1,35 @@
+.header_for_smart_phone {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  @media screen and (max-width: 600px) {
+    display: block;
+    border-bottom: solid 2px $header-border;
+    background-color: white;
+    .menus {
+      display: flex;
+      height: $header-height;
+      li {
+        flex: 1 1 auto;
+         a , p{
+          color: $header-font;
+          font-weight: 600;
+          line-height: $header-height;
+          text-align: center;
+          margin: 0 auto;
+          display: block;
+        }
+        a:hover {
+          color: $blue;
+          border-bottom: solid 2px $blue;
+        }
+      }
+    }
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -6,14 +38,25 @@
   font-size: 14px;
   height: $header-height;
   width: 100%;
-  padding: 0 120px;
   line-height: $header-height;
   background-color: white;
   border-bottom: solid 2px $header-border;
   display: flex;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  .flex_1 {
+    flex: 1 1 auto;
+    order: 1;
+  }
+  .flex_5 {
+    flex: 1 1 auto;
+    order: 5;
+  }
   .left-menus{
     height: $header-height;
-    order: 1;
+    flex: 0 1 auto;
+    order: 2;
     display: flex;
     li{
       a {
@@ -28,10 +71,28 @@
       }
     }
   }
+  .reload-icon {
+    height: $header-height;
+    margin: 0 200px;
+    flex: 0 0 auto;
+    order: 3;
+    a {
+      color: $blue;
+      line-height: $header-height;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .reload-icon {
+      height: $header-height;
+      margin: 0 50px;
+      flex: 0 0 auto;
+      order: 3;
+    }
+  }
   .right-menus{
     height: $header-height;
-    // float: right;
-    order: 3;
+    flex: 0 1 auto;
+    order: 4;
     display: flex;
     li{
       height: $header-height;
@@ -83,16 +144,6 @@
         right: 7px;
         top: 14px;
       }
-    }
-  }
-  .reload-icon {
-    height: $header-height;
-    width: $header-height;
-    margin: 0 auto;
-    order: 2;
-    a {
-      color: $blue;
-      line-height: $header-height;
     }
   }
 }

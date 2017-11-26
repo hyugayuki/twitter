@@ -6,6 +6,7 @@
 </div>
 
 <div class="header">
+  <div class="flex_1"></div>
   <ul class="left-menus">
     <li>
       <%= link_to "ホーム", root_path, class: "fa fa-home" %>
@@ -36,5 +37,27 @@
   </ul>
   <ul class="reload-icon">
     <a href="javascript:location.reload();" class="fa fa-twitter fa-2x"></a>
+  </ul>
+  <div class="flex_5"></div>
+</div>
+
+
+<div class="header_for_smart_phone">
+  <ul class="menus">
+    <li>
+      <%= link_to "", root_path, class: "fa fa-home" %>
+    </li>
+    <li>
+      <a class="fa fa-bolt" href=""></a>
+    </li>
+    <li>
+      <a class="fa fa-bell-o" href=""></a>
+    </li>
+    <li>
+      <a class="fa fa-envelope-o" id="display-message-modal"></a>
+    </li>
+    <li class="tweet_button">
+      <p id="display-post-modal" class="fa fa-paper-plane"></p>
+    </li>
   </ul>
 </div>
